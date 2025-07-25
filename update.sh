@@ -163,8 +163,8 @@ install_small8() {
         tuic-client chinadns-ng ipt2socks tcping trojan-plus simple-obfs shadowsocksr-libev \
         luci-app-passwall smartdns luci-app-smartdns v2dat mosdns luci-app-mosdns \
         taskd luci-lib-xterm luci-lib-taskd \       
-        luci-theme-argon netdata luci-app-netdata lucky luci-app-lucky luci-app-homeproxy \
-        luci-app-amlogic nikki luci-app-nikki \
+        luci-theme-argon lucky luci-app-lucky luci-app-homeproxy \
+        luci-app-amlogic \
         msd_lite luci-app-msd_lite cups luci-app-cupsd
 }
 
