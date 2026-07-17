@@ -142,16 +142,16 @@ jobs:
           REMOVE_CONFIG_FRAGMENTS: ${{ inputs.remove_fragments }}
         run: ./build.sh ${{ inputs.model }}
 
-      - name: Delete Old Cache
-        run: |
-          # 获取缓存列表并删除
-          gh cache list --key ${{ matrix.os }}-${{ inputs.model }}-${{ hashFiles('**/repo_flag') }}- --json key --jq '.[] | .key' | while read -r key; do
-            gh cache delete "$key"
-          done
-          # 输出缓存状态
-          echo "========cache status========"
-          echo "ccache: $(du -sh ./action_build/.ccache | cut -f 1)"
-          echo "staging: $(du -sh ./action_build/staging_dir | cut -f 1)"
+      # - name: Delete Old Cache
+      #   run: |
+      #     # 获取缓存列表并删除
+      #     gh cache list --key ${{ matrix.os }}-${{ inputs.model }}-${{ hashFiles('**/repo_flag') }}- --json key --jq '.[] | .key' | while read -r key; do
+      #       gh cache delete "$key"
+      #     done
+      #     # 输出缓存状态
+      #     echo "========cache status========"
+      #     echo "ccache: $(du -sh ./action_build/.ccache | cut -f 1)"
+      #     echo "staging: $(du -sh ./action_build/staging_dir | cut -f 1)"
 
       - name: Machine Information (Post-build)
         run: |
